@@ -1,68 +1,22 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the customer-facing Zalt web app, which was written with Node, React, and Redux. This app communicates with our custom-built Zalt API, the documentation for which can be found [here](https://zalt.app/documentation?key=WfrHBswAznwFjPVYETq3).
 
-## Available Scripts
+- Zalt’s Demo Video 1 (Mobile & Web Platform): https://zalt.app/apartment-demo
+- Zalt’s Demo Video 2 (Mobile & Web Platform): https://zalt.app/demo
+- Zalt’s Website: https://zalt.app/
+- Zalt’s Intro Video: https://zalt.app/intro
 
-In the project directory, you can run:
+The code for this repository is structured around the two diagrams below:
 
-### `yarn start`
+![Component Hierarchy](https://github.com/seungbineleanor/zalt-node/diagrams/componentHierarchy.jpg)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![User Interface Diagrams](https://github.com/seungbineleanor/zalt-node/diagrams/diagrams.jpg)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+==
 
-### `yarn test`
+Zalt is B2B enterprise software that digitizes the customer experience of non-tech businesses (such as apartment buildings) by allowing those businesses to easily create customizable, customer-facing, mobile micro-apps without any technical expertise. For instance, just through several taps within Zalt’s mobile app, residents of an apartment can request services, make payments, submit forms, chat with employees, schedule appointments, and more. Additionally, Zalt automates the workflow of employees of the apartment by storing and updating residents’ data in real-time, allowing effortless data exportation to industry-standard formats such as Excel, and more.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Furthermore, Zalt strives to increase the engagement and sales of the services of an apartment building by using computational marketing techniques; our microapp strategy allows us to use machine learning to build an accurate profile of the apartment residents to determine whom would be most optimal to target with promotions and the types of promotions to use.
 
-### `yarn build`
+Some of the features Zalt provides are as below:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+custom form submission platform (customer to business), instant-messaging platform (between business and customer), a zero-hardware payment platform, appointment scheduling platform, notification platform, and customer feedback platform, and login platform.
