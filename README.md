@@ -7,9 +7,9 @@ This repository contains the customer-facing Zalt web app, which was written wit
 
 The code for this repository is structured around the two diagrams below:
 
-![Component Hierarchy](https://github.com/seungbineleanor/zalt-node/diagrams/componentHierarchy.jpg)
+![Component Hierarchy](https://github.com/seungbineleanor/zalt-node/raw/master/diagrams/componentHierarchy.jpg)
 
-![User Interface Diagrams](https://github.com/seungbineleanor/zalt-node/diagrams/diagrams.jpg)
+![User Interface Diagrams](https://github.com/seungbineleanor/zalt-node/raw/master/diagrams/diagrams.jpg)
 
 ==
 
