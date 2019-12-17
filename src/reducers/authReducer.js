@@ -8,6 +8,7 @@ const INITIAL_STATE = { //state is an object
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case SIGN_IN:
+      console.log(action.payload)
       return { ...state, isSignedIn : true, userInfo: action.payload };
     case SIGN_OUT:
       return { ...state, isSignedIn : false, userInfo: null };

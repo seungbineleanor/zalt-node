@@ -1,4 +1,4 @@
-import { SIGN_IN, SIGN_OUT } from './types';
+import { SIGN_IN, SIGN_OUT, GET_BUSINESSES } from './types';
 import axios from 'axios';
 
 export const signIn = (email, password) => async (dispatch, getState) => {
@@ -18,6 +18,23 @@ export const signIn = (email, password) => async (dispatch, getState) => {
     dispatch({ type:SIGN_IN, payload: response.data})
 };
 
+
+//get state function gives access to all data in the redux store
+export const getBusinesses = () => async (dispatch, getState) => {
+  const config = {
+    headers:{
+      "Zalt-Auth": getState().auth.userInfo.auth.content
+    },
+    params:{
+      "latitude":0,
+      "longitude":0,
+      "limit":10
+    }
+  }
+  const response = await axios.get('https://zalt.app/api/v1/locations/nearby', config);
+  //wait for all info to be fetched and processed by reducer
+  dispatch({ type: GET_BUSINESSES, payload: response.data })
+}
 
 export const signOut = () => {
   return { //return action

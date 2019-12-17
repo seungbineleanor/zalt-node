@@ -6,6 +6,10 @@ import { signIn, signOut } from '../actions';
 //class-based component
 class Header extends React.Component {
 
+  onSignOutClick = () => {
+     this.props.signOut();
+   };
+
   loggedOutHeader(){
     return (
       <div className="ui secondary pointing menu">
@@ -37,9 +41,9 @@ class Header extends React.Component {
           <Link to = "/" className="item">
             Settings
           </Link>
-          <Link to = "/" className="item">
+          <a onClick={this.onSignOutClick} className="item">
             Log Out
-          </Link>
+          </a>
         </div>
       </div>
     );
