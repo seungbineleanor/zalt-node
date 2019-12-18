@@ -1,17 +1,18 @@
 import React from 'react';
 import BusinessList from './BusinessList';
-import BusinessSearchBar from './BusinessSearchBar';
 
 
 class BusinessListContainer extends React.Component {
   render(){
     return (
-      <div>
-        <BusinessSearchBar/>
+      <div className="ui container">
+        <h1 class="ui center aligned header" style = {{ marginTop: '10px' }}>
+          ZALT
+        </h1>
         <BusinessList/>
       </div>
     );
-  };
-};
+  }
+}
 
 export default BusinessListContainer;

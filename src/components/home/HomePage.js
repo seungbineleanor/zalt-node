@@ -10,11 +10,11 @@ class HomePage extends React.Component {
     }
     return <div>Welcome To the Zalt Home Page</div>
   }
-};
+}
 
 //state object from redux store
 const mapStateToProps = (state) => {
   return { isSignedIn: state.auth.isSignedIn }
-};
+}
 
 export default connect(mapStateToProps)(HomePage);

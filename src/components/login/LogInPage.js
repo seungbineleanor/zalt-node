@@ -12,12 +12,11 @@ class LogInPage extends React.Component{
     }
     return <div><LogInForm signIn={this.props.signIn}/></div>
   }
-
-};
+}
 
 //state object from redux store
 const mapStateToProps = (state) => {
   return { isSignedIn : state.auth.isSignedIn }
-};
+}
 
 export default connect(mapStateToProps, { signIn })(LogInPage);
