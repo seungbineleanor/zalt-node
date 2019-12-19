@@ -1,4 +1,4 @@
-import { SIGN_IN, SIGN_OUT, GET_BUSINESSES } from './types';
+import { SIGN_IN, SIGN_OUT, GET_BUSINESSES, GET_BUSINESS_INFO } from './types';
 import axios from 'axios';
 
 export const signIn = (email, password) => async (dispatch, getState) => {
@@ -41,3 +41,17 @@ export const signOut = () => {
     type: SIGN_OUT
   };
 };
+
+export const getBusinessInfo = (location_id) => async (dispatch, getState) => {
+  const config = {
+    headers:{
+      "Zalt-Auth": getState().auth.userInfo.auth.content
+    },
+    params:{
+      "location_id": location_id
+    }
+  }
+  const response = await axios.get('https://zalt.app/api/v1/locations/info', config);
+  //wait for all info to be fetched and processed by reducer
+  dispatch({ type: GET_BUSINESS_INFO, payload: response.data })
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getBusinesses } from '../../actions';
 import BusinessSearchBar from './BusinessSearchBar';
+import { Link } from 'react-router-dom';
 
 class BusinessList extends React.Component {
   //called when BusinessList is first loaded onto screen
@@ -31,7 +32,7 @@ class BusinessList extends React.Component {
               <img src= {b.image_url}/>
             </div>
             <div className="content">
-              <a className="header">{b.name}</a>
+              <Link to = {`/b/${b._id}`} className="header">{b.name}</Link>
               <div className="meta">
                 <span className="date">{b.address}</span>
               </div>
