@@ -7,7 +7,7 @@ import storage from 'redux-persist/lib/storage'
 import thunk from 'redux-thunk';
 import App from './components/App';
 import reducers from './reducers';
-import { PersistGate } from 'redux-persist/integration/react'
+import { PersistGate } from 'redux-persist/integration/react';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

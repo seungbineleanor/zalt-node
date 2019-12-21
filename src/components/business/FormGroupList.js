@@ -25,7 +25,6 @@ class FormGroupList extends React.Component {
 //returning array of jsx tags
 const getForms = (forms, business_id) => {
   const forms2 = forms.map((form) => {
-    console.log(form.requires_payment);
     return (
       <div key={form._id}>
         <Modal trigger={<a className="description">{ form.name }</a>}>
@@ -45,7 +44,6 @@ const getForms = (forms, business_id) => {
   });
   return forms2
 }
-
 
 //state object from redux store
 //lets props to be accessible to mapStateToProps
