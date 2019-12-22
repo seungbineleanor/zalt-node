@@ -25,7 +25,6 @@ class BusinessList extends React.Component {
       return <div>loading...</div>
     }
 
-    console.log(this.props.businesses);
     const cards = this.props.businesses.map((b) => {
       if (b.name.includes(this.state.term)){
         return (
@@ -40,7 +39,7 @@ class BusinessList extends React.Component {
                   <Modal.Header>{ b.name }</Modal.Header>
                   <Modal.Content>
                     <h3>{b.address}</h3>
-                    <Map lat={b.lat} lng={b.lng} business_id={b._id}/>
+                    <Map lat={b.lat} lng={b.lng} business_id={b._id} businesses={this.props.businesses} />
                   </Modal.Content>
                 </Modal>
               </div>
