@@ -1,7 +1,6 @@
 import React from 'react';
 import BusinessList from './BusinessList';
 
-
 class BusinessListContainer extends React.Component {
   render(){
     return (

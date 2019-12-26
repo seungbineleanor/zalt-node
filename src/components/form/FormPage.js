@@ -25,7 +25,7 @@ class FormPage extends React.Component {
         <h2 className="ui center aligned header" style={{marginTop:'20px', marginBottom:'20px'}}>
           {this.props.business.name} > {this.props.businessForm.name}
         </h2>
-        <FormFillerContainer form_id={ form_id } />
+        <FormFillerContainer form_id={ form_id } history={this.props.history} />
       </div>
     );
   }

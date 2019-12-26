@@ -6,6 +6,8 @@ import SignUpPage from './signup/SignUpPage';
 import LogInPage from './login/LogInPage';
 import BusinessPage from './business/BusinessPage';
 import FormPage from './form/FormPage';
+import SuccessPage from './form/SuccessPage';
+import FormSubmissionsContainer from './history/FormSubmissionsContainer';
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
         <Route path="/login" exact component={LogInPage} />
         <Route path="/b/:business_id" exact component={BusinessPage} />
         <Route path="/b/:business_id/:form_id" exact component={FormPage} />
+        <Route path="/success" exact component={SuccessPage} />
+        <Route path="/history" exact component={FormSubmissionsContainer} />
       </BrowserRouter>
     </div>
   );
