@@ -89,11 +89,13 @@ class FormFiller extends React.Component {
     return (
       //call handleSubmit callback function with our callback method
       //having className error will allow us to display the error
-      <form onSubmit={this.props.handleSubmit(this.onSubmit.bind(this))} className="ui form error">
-        {sections}
-        <br></br>
-        <button className="ui button primary">Submit</button>
-      </form>
+      <div>
+        <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form error">
+          {sections}
+          <br></br>
+          <button className="ui button primary">Submit</button>
+        </form>
+      </div>
     );
   }
 }

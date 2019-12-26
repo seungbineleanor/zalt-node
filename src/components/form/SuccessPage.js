@@ -17,7 +17,6 @@ class SuccessPage extends React.Component {
         <p> Your Form Submission Was Successful! </p>
         <Button primary onClick={this.onButtonClick}>Go To History</Button>
       </div>
-
     );
   }
 }

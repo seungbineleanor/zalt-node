@@ -7,7 +7,7 @@ class FormFillerContainer extends React.Component {
     return (
       <div>
         <FormFiller
-          formObject = { this.props.formObject } 
+          formObject = { this.props.formObject }
           authToken = { this.props.authToken }
           history = { this.props.history }
         />

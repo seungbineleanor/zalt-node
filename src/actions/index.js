@@ -1,4 +1,6 @@
-import { SIGN_IN, SIGN_OUT, GET_BUSINESSES, GET_BUSINESS_INFO, GET_FORM_INFO } from './types';
+import { SIGN_IN, SIGN_OUT, GET_BUSINESSES, GET_BUSINESS_INFO, GET_FORM_INFO,
+  GET_FORM_SUBMISSIONS, GET_FORM_SUBMISSIONS_DETAIL
+ } from './types';
 import axios from 'axios';
 
 export const signIn = (email, password) => async (dispatch, getState) => {
@@ -67,4 +69,28 @@ export const getFormInfo = (form_id) => async (dispatch, getState) => {
   }
   const response = await axios.get('https://zalt.app/api/v1/locations/form-info', config);
   dispatch({ type: GET_FORM_INFO, payload: response.data })
+}
+
+//get all form subissions to display on history page
+export const getFormSubmissions = () => async (dispatch, getState) => {
+  const config = {
+    headers : {
+      "Zalt-Auth": getState().auth.userInfo.auth.content
+    }
+  }
+  const response = await axios.get('https://zalt.app/api/v1/form_submissions', config);
+  dispatch({ type: GET_FORM_SUBMISSIONS, payload: response.data })
+}
+
+export const getFormSubmissionsDetail = (form_submission_id) => async (dispatch, getState) => {
+  const config = {
+    headers : {
+      "Zalt-Auth": getState().auth.userInfo.auth.content
+    },
+    params : {
+      "form_submission_id" : form_submission_id
+    }
+  }
+  const response = await axios.get('https://zalt.app/api/v1/form_submissions/info', config);
+  dispatch({ type: GET_FORM_SUBMISSIONS_DETAIL, payload: response.data })
 }
