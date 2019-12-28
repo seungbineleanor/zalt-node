@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getFormSubmissions, getFormSubmissionsDetail } from '../../actions';
+import { getFormSubmissions } from '../../actions';
 import { Header, Modal } from 'semantic-ui-react';
+import FormSubmissionsDetails from './FormSubmissionsDetails';
 
 class FormSubmissionsContainer extends React.Component {
 
   componentDidMount(){
     this.props.getFormSubmissions();
-    console.log("?");
   }
 
   render(){
@@ -19,7 +19,7 @@ class FormSubmissionsContainer extends React.Component {
               <Modal trigger={<a className="date">{submission.form_name}</a>}>
                 <Modal.Header>{ submission.location_name } > { submission.form_name }</Modal.Header>
                 <Modal.Content>
-                  hi
+                  <FormSubmissionsDetails key = {submission._id} submission_id = { submission._id }/>
                 </Modal.Content>
               </Modal>
             </div>
@@ -36,10 +36,9 @@ class FormSubmissionsContainer extends React.Component {
 
 const mapStateToProps = (state, props) => {
   return {
-    formSubmissions : state.submissions.submissions,
-    // formSubmissionsDetails : state.submissions.submissionsInfo[submission_id]
+    formSubmissions : state.submissions.submissions
   };
 };
 
 //connects a React component to the redux store
-export default connect(mapStateToProps, { getFormSubmissions, getFormSubmissionsDetail })(FormSubmissionsContainer);
+export default connect(mapStateToProps, { getFormSubmissions })(FormSubmissionsContainer);
