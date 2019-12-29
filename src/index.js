@@ -22,6 +22,7 @@ const persistedReducer = persistReducer(persistConfig, reducers)
 //hook up middleware to redux store
 const store = createStore(persistedReducer, composeEnhancers(applyMiddleware(thunk)));
 const persistor = persistStore(store)
+// persistor.purge() 
 
 ReactDOM.render(
   <Provider store={store}>

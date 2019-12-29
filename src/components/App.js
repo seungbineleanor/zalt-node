@@ -10,6 +10,7 @@ import SuccessPage from './form/SuccessPage';
 import FormSubmissionsContainer from './history/FormSubmissionsContainer';
 import FormSubmissionsDetails from './history/FormSubmissionsDetails';
 import SettingsPage from './settings/SettingsPage';
+import PrivateRoute from './PrivateRoute';
 
 const App = () => {
   return (
@@ -19,12 +20,12 @@ const App = () => {
         <Route path="/" exact component={HomePage} />
         <Route path="/signup" exact component={SignUpPage} />
         <Route path="/login" exact component={LogInPage} />
-        <Route path="/b/:business_id" exact component={BusinessPage} />
-        <Route path="/b/:business_id/:form_id" exact component={FormPage} />
-        <Route path="/success" exact component={SuccessPage} />
-        <Route path="/history" exact component={FormSubmissionsContainer} />
-        <Route path="/history/:submission_id" exact component={FormSubmissionsDetails} />
-        <Route path="/settings" exact component={SettingsPage} />
+        <PrivateRoute path="/b/:business_id" exact component={BusinessPage} />
+        <PrivateRoute path="/b/:business_id/:form_id" exact component={FormPage} />
+        <PrivateRoute path="/success" exact component={SuccessPage} />
+        <PrivateRoute path="/history" exact component={FormSubmissionsContainer} />
+        <PrivateRoute path="/history/:submission_id" exact component={FormSubmissionsDetails} />
+        <PrivateRoute path="/settings" exact component={SettingsPage} />
       </BrowserRouter>
     </div>
   );

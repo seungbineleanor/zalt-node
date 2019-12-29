@@ -97,12 +97,14 @@ export const getFormSubmissionsDetail = (form_submission_id) => async (dispatch,
 
 export const updateSettings = (bodyObject) => async (dispatch, getState) => {
   const config = {
+    url: 'https://zalt.app/api/v1/auth/update',
+    method: 'patch',
     headers : {
       "Zalt-Auth": getState().auth.userInfo.auth.content
     },
-    params : bodyObject
+    data : bodyObject
   }
 
-  const response = await axios.patch('https://zalt.app/api/v1/auth/update', config);
+  const response = await axios(config);
   dispatch({type: UPDATE_SETTINGS, payload: response.data })
 }

@@ -6,7 +6,7 @@ class SettingsForm extends React.Component {
 
   onSubmit = (formValues) => {
     console.log(formValues);
-    // this.props.updateSettings(formValues)
+    this.props.updateSettings(formValues)
   }
 
   renderInput = ({ input, label }) => {

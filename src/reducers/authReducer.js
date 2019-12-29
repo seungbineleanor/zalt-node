@@ -13,7 +13,7 @@ export default (state = INITIAL_STATE, action) => {
     case SIGN_OUT:
       return { ...state, isSignedIn : false, userInfo: null };
     case UPDATE_SETTINGS:
-      return { ...state, userInfo : action.payload }
+      return { ...state, userInfo: { ...state.userInfo, user: action.payload }}
     default:
       return state;
   }

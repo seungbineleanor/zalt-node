@@ -32,31 +32,32 @@ class FormFiller extends React.Component {
   //but when using redux-form, it will be called with what values
   //existed inside our field inputs
 
-  onSubmit = (formValues) => {
-    //react router redirect programmatically
-    this.props.history.push(`/success`);
-  }
-  // onSubmit = async (formValues) => {
-  //   const result = {
-  //     "form_id": this.props.formObject._id,
-  //     "submission_input":formValues
-  //   }
-  //   console.log(result)
-  //
-  //   const config = {
-  //     headers:{
-  //       "Zalt-Auth": this.props.authToken
-  //     }
-  //   }
-  //
-  //   const postResponse = await axios.post(
-  //     "https://zalt.app/api/v1/form_submissions",
-  //      result,
-  //      config
-  //   )
-  //
-  //   console.log(postResponse.data)
+  // onSubmit = (formValues) => {
+  //   //react router redirect programmatically
+  //   this.props.history.push(`/success`);
   // }
+
+  onSubmit = async (formValues) => {
+    const result = {
+      "form_id": this.props.formObject._id,
+      "submission_input":formValues
+    }
+    console.log(result)
+
+    const config = {
+      headers:{
+        "Zalt-Auth": this.props.authToken
+      }
+    }
+
+    const postResponse = await axios.post(
+      "https://zalt.app/api/v1/form_submissions",
+       result,
+       config
+    )
+
+    console.log(postResponse.data)
+  }
 
   render(){
     if (this.props.formObject.is_menu){
