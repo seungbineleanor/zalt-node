@@ -1,5 +1,5 @@
 import { SIGN_IN, SIGN_OUT, GET_BUSINESSES, GET_BUSINESS_INFO, GET_FORM_INFO,
-  GET_FORM_SUBMISSIONS, GET_FORM_SUBMISSIONS_DETAIL, UPDATE_SETTINGS
+  GET_FORM_SUBMISSIONS, GET_FORM_SUBMISSIONS_DETAIL, UPDATE_SETTINGS, SIGN_UP
  } from './types';
 import axios from 'axios';
 
@@ -14,7 +14,7 @@ export const signIn = (email, password) => async (dispatch, getState) => {
     	"limit": 10,
     	"fcm_token": "test"
     }
-    axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
+    //axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
 
     const response = await axios.post('https://zalt.app/api/v1/auth/login', test);
     dispatch({ type:SIGN_IN, payload: response.data})
@@ -96,6 +96,7 @@ export const getFormSubmissionsDetail = (form_submission_id) => async (dispatch,
 }
 
 export const updateSettings = (bodyObject) => async (dispatch, getState) => {
+
   const config = {
     url: 'https://zalt.app/api/v1/auth/update',
     method: 'patch',
@@ -104,7 +105,34 @@ export const updateSettings = (bodyObject) => async (dispatch, getState) => {
     },
     data : bodyObject
   }
-
   const response = await axios(config);
   dispatch({type: UPDATE_SETTINGS, payload: response.data })
 }
+
+export const signUp = (email, password, password_confirmation, first_name, last_name) => async (dispatch, getState) => {
+
+    const body = {
+      "email": email,
+      "password": password,
+      "password_confirmation": password_confirmation,
+      "first_name" : first_name,
+      "last_name" : last_name,
+      "os_type": "Android",
+      "os_version": "10.0.1",
+      "latitude": 70.0,
+      "longitude": 70.0,
+      "skip":0,
+      "limit": 10,
+      "fcm_token": "test"
+    }
+
+    const config = {
+      url: 'https://zalt.app/api/v1/auth/signup',
+      method: 'post',
+      data : body
+    }
+    // axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
+
+    const response = await axios(config);
+    dispatch({ type:SIGN_UP, payload: response.data})
+};
