@@ -1,4 +1,4 @@
-import { SIGN_IN, SIGN_OUT } from '../actions/types';
+import { SIGN_IN, SIGN_OUT, UPDATE_SETTINGS } from '../actions/types';
 
 const INITIAL_STATE = { //state is an object
   isSignedIn: false,
@@ -12,6 +12,8 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, isSignedIn : true, userInfo: action.payload };
     case SIGN_OUT:
       return { ...state, isSignedIn : false, userInfo: null };
+    case UPDATE_SETTINGS:
+      return { ...state, userInfo : action.payload }
     default:
       return state;
   }

@@ -38,7 +38,7 @@ class Header extends React.Component {
           <Link to = "/" className="item">
             History
           </Link>
-          <Link to = "/" className="item">
+          <Link to = "/settings" className="item">
             Settings
           </Link>
           <a onClick={this.onSignOutClick} className="item">

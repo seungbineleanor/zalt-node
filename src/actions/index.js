@@ -1,5 +1,5 @@
 import { SIGN_IN, SIGN_OUT, GET_BUSINESSES, GET_BUSINESS_INFO, GET_FORM_INFO,
-  GET_FORM_SUBMISSIONS, GET_FORM_SUBMISSIONS_DETAIL
+  GET_FORM_SUBMISSIONS, GET_FORM_SUBMISSIONS_DETAIL, UPDATE_SETTINGS
  } from './types';
 import axios from 'axios';
 
@@ -93,4 +93,16 @@ export const getFormSubmissionsDetail = (form_submission_id) => async (dispatch,
   }
   const response = await axios.get('https://zalt.app/api/v1/form_submissions/info', config);
   dispatch({ type: GET_FORM_SUBMISSIONS_DETAIL, payload: response.data })
+}
+
+export const updateSettings = (bodyObject) => async (dispatch, getState) => {
+  const config = {
+    headers : {
+      "Zalt-Auth": getState().auth.userInfo.auth.content
+    },
+    params : bodyObject
+  }
+
+  const response = await axios.patch('https://zalt.app/api/v1/auth/update', config);
+  dispatch({type: UPDATE_SETTINGS, payload: response.data })
 }

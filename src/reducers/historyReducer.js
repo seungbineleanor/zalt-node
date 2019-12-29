@@ -1,4 +1,4 @@
-import {  GET_FORM_SUBMISSIONS, GET_FORM_SUBMISSIONS_DETAIL } from '../actions/types';
+import {  GET_FORM_SUBMISSIONS, GET_FORM_SUBMISSIONS_DETAIL, SIGN_OUT } from '../actions/types';
 
 const INITIAL_STATE = {
   submissions : null,
@@ -12,6 +12,8 @@ export default (state = INITIAL_STATE, action) => {
     case GET_FORM_SUBMISSIONS_DETAIL:
       const new_dict = { ...state.submissionsInfo, [action.payload._id] : action.payload }
       return { ... state, submissionsInfo : new_dict }
+    case SIGN_OUT:
+      return { submissions: null, submissionsInfo: {} }
     default:
       return state;
   }
