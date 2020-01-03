@@ -13,12 +13,12 @@ class LogInForm extends React.Component {
       }
   }
 
-  renderInput = ({ input, label, meta }) => {
+  renderInput = ({ input, label, meta, type }) => {
     const className = `field ${meta.error && meta.touched ? "error" : ""}`;
     return(
       <div className={className}>
         <label>{label}</label>
-        <input {...input} autoComplete="off" />
+        <input {...input} autoComplete="off" type={type} />
         {this.renderError(meta)}
       </div>
     );

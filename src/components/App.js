@@ -11,6 +11,7 @@ import FormSubmissionsContainer from './history/FormSubmissionsContainer';
 import FormSubmissionsDetails from './history/FormSubmissionsDetails';
 import SettingsPage from './settings/SettingsPage';
 import PrivateRoute from './PrivateRoute';
+import SharedPage from './shared/SharedPage';
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <PrivateRoute path="/history" exact component={FormSubmissionsContainer} />
         <PrivateRoute path="/history/:submission_id" exact component={FormSubmissionsDetails} />
         <PrivateRoute path="/settings" exact component={SettingsPage} />
+        <Route path="/shared" exact component={SharedPage}/>
       </BrowserRouter>
     </div>
   );

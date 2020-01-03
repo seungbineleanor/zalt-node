@@ -1,5 +1,6 @@
 import { SIGN_IN, SIGN_OUT, GET_BUSINESSES, GET_BUSINESS_INFO, GET_FORM_INFO,
-  GET_FORM_SUBMISSIONS, GET_FORM_SUBMISSIONS_DETAIL, UPDATE_SETTINGS, SIGN_UP
+  GET_FORM_SUBMISSIONS, GET_FORM_SUBMISSIONS_DETAIL, UPDATE_SETTINGS, SIGN_UP,
+  GET_SHARED_FORMS
  } from './types';
 import axios from 'axios';
 
@@ -135,4 +136,16 @@ export const signUp = (email, password, password_confirmation, first_name, last_
 
     const response = await axios(config);
     dispatch({ type:SIGN_UP, payload: response.data})
+};
+
+export const getSharedForms = () => async (dispatch, getState) => {
+
+  const config = {
+    headers : {
+      "Zalt-Auth": getState().auth.userInfo.auth.content
+    }
+  }
+  const response = await axios.get('http://localhost:3001/shared', config);
+  console.log(response);
+  dispatch({ type: GET_SHARED_FORMS, payload: response.data })
 };
