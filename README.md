@@ -1,9 +1,4 @@
-This repository contains the customer-facing Zalt web app, which was written with Node, React, and Redux. This app communicates with our custom-built Zalt API, the documentation for which can be found [here](https://zalt.app/documentation?key=WfrHBswAznwFjPVYETq3).
-
-- Zalt’s Demo Video 1 (Mobile & Web Platform): https://zalt.app/apartment-demo
-- Zalt’s Demo Video 2 (Mobile & Web Platform): https://zalt.app/demo
-- Zalt’s Website: https://zalt.app/
-- Zalt’s Intro Video: https://zalt.app/intro
+This repository contains the customer-facing Zalt web app, which was written with Node, React, and Redux. This app communicates with our custom-built Zalt API.
 
 The code for this repository is structured around the two diagrams below:
 
